@@ -19,7 +19,21 @@ export default function App() {
     const init = async () => {
       await login(token);
       await userData(69).then((r) => {
-        setUser(r.data);
+        setUser(r.value.data);
+
+        // biba comment
+        // biba comment
+        // biba comment
+        if (r.isRight()) setUser(r.value.data);
+
+        r.mapLeft((r) => {
+          // что=то можем сделать с ошибочками
+          console.log(r.biba);
+        });
+
+        r.mapRight((r) => {
+          setUser(r.data);
+        });
       });
       // и тут вызываются море других методов
     };
