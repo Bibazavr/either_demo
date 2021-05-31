@@ -1,0 +1,7 @@
+.idea
+ios
+android
+node_modules
+assets
+*.md
+*.config.js
